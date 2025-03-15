@@ -125,6 +125,9 @@ def pyramid_no_gap(n):
         print("*"*(2*i+1))
     print()
 
+
+
+
 x=int(input("n:"))
 square(x)
 rectangle(int(input("enter l:")),int(input("enter b:")))
@@ -138,6 +141,7 @@ left_turned_no_gaps(x)
 inverted_to_left(x)
 inverted_left_no_gaps(x)
 pyramid_no_gap(x)
+
 
 
 

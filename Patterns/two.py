@@ -51,6 +51,7 @@ def hour_glass(n):
     inverted_traingle_pattern(n)
     triangle_start_pattern(n)
 
+
 #     *
 #    * *
 #   *   *
@@ -68,8 +69,49 @@ def hollow_traingle(n):
             print("*"," "*x,"*",sep="")
             x+=2
 
+
+# * * * * * 
+#  *     *
+#   *   *
+#    * *
+#     *    
+def inverted_hollow_triangle(n):
+    x=((n-2)*2)-1
+    for i in range(n):
+        print(" "*i,end="")
+        if i==0:
+            print("* "*n)
+        elif i==n-1:
+            print("*"+" "*(i))
+        else:
+            print("*"+" "*x+"*")
+            x-=2
+
+#    *
+#   * *
+#  *   *
+# *     *
+#  *   *
+#   * *
+#    *
+def diamond(n):
+    x=1
+    for i in range(2*n+1):
+        print(" "*abs(n-i),end="")
+        if i==0 or i==2*n:
+            print("*")
+        elif i<n:
+            print("*"+" "*x+"*")
+            x+=2
+        elif i>=n:
+            print("*"+" "*x+"*")
+            x-=2
+
+
 n=int(input("n:"))
 inverted_pyramid(n)
 inverted_traingle_pattern(n)
 hour_glass(n)
 hollow_traingle(n)
+inverted_hollow_triangle(n)
+diamond(n)
