@@ -1,5 +1,5 @@
-# most optimal soln
 # 238. Product of Array Except Self
+# most optimal soln
 # prefix&suffix Product
 # o(1)-sc
 # without using // operator...

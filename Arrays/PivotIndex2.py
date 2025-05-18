@@ -1,6 +1,7 @@
 # using prefixSum arr alone
 # can try this even without using arr for psum,as we need only prev psum ,store it in var.
 # then sc-o(1)
+# 724. Find Pivot Index
 def pivotIndex2(a,n):
     s=sum(a)
     prefix=[]

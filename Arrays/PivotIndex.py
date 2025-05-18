@@ -1,5 +1,7 @@
 # prefix & suffix sum logic
 # o(n)
+# 724. Find Pivot Index
+
 def PivotIndex(a):
     n=len(a)
     prefix=[-1]*(n)
