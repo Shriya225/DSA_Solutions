@@ -1,5 +1,9 @@
+# 150. Evaluate Reverse Polish Notation
+
 # Revrese Polish notation is == postfix
+
 # 10 6 9 3 + -11 * / * 17 + 5 +
+
 def RPN(a):
     stk=[]
     for i in a:
