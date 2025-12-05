@@ -118,3 +118,15 @@ def isPali(s):
 
 s=input("S:")
 print(isPali(s))
+
+def bs(a,l,h,t):
+    if l>h:
+        return -1
+    m=(l+h)//2
+    if a[m]==t:
+        return m
+    elif a[m]>t:
+        return bs(a,l,m-1,t)
+    else:
+        return bs(a,m+1,h,t)
+
