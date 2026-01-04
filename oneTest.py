@@ -1,21 +1,20 @@
-# def isPrime(n):
-#     if n<=1:
-#         return False
-#     for i in range(2,n):
-#         if n%i==0:
-#             return False
-#     return True
-# n=int(input("n:"))
-# print(isPrime(n))
+#  1   5  10  10   5   1
+# 1   6  15  20  15   6   1
 
-def sl(a):
-    l=s=a[0]
-    for i in range(len(a)):
-        if a[i]>l:
-            s=l
-            l=a[i]
-        if a[i]>s and a[i]<l:
-            s=a[i]
-    print(s,l)
-a=list(map(int,input("a:").split()))
-print(sl(a))
+def Pascals(n):
+    ans=[[1]]
+    for i in range(2,n+1):
+        x=[]
+        for j in range(i):
+            if j==0 or j==i-1:
+                x.append(1)
+            else:
+                x.append(ans[-1][j]+ans[-1][j-1])
+        ans.append(x)
+    return ans
+            
+
+
+
+n=int(input("n:"))
+print(Pascals(n))

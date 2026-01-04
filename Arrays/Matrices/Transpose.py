@@ -26,7 +26,7 @@ def Transpose_square(a,r,c):
     for i in range(r):
         for j in range(i+1,c):
             a[i][j],a[j][i]=a[j][i],a[i][j]
-    return mat
+    return a
             
 r=int(input("r:"))
 c=int(input("c:"))
