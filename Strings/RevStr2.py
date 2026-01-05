@@ -1,3 +1,5 @@
+# 541. Reverse String II
+# brute soln
 def reverse(str,i,j,k):
         print(i,j)
         rev=''
