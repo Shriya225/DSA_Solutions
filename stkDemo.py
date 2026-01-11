@@ -1,22 +1,26 @@
-class Queue:
-    def __init__(self,size):
-        self.f=self.r=-1
-        self.size=size
-        self.a=[None]*size
-    def enQueue(self,ele):
-        if self.r==self.size-1:
-            print("Queu is full")
-            return
-        if self.f==-1:
-            self.f+=1
-        self.r+=1
-        self.a[self.r]=ele
-    def deQueue(self):
-        if self.f==-1:
-            print("Queue is empty")
-            return 
-        val=self.a[self.f]
-        self.f+=1
+def infixToPostfix(a):
+    stk=[]
+    ans=''
+    priority={"^":3,"/":2,"*":2,"+":1,"-":1}
+    for i in range(len(a)):
+        if a[i] not in "+-^*/()[]":
+            ans+=a[i]
+        elif a[i]==")":
+            while stk[-1]!="(":
+                ans+=stk.pop()
+            stk.pop()
+        else:
+            while a[i]!="(" and stk and  priority[a[i]]<=priority[stk[-1]]:
+                if a[i]=="^" and stk and priority[a[i]]==priority[stk[-1]]:
+                    break
+                ans+=stk.pop()           
+            stk.append(a[i])
+    while stk:
+        ans+=stk.pop()
+    return ans
+
+s=input("s:")
+print(infixToPostfix(s))
 
 
 
