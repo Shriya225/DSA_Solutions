@@ -20,6 +20,18 @@ n2.left=n4
 n2.right=n5
 n3.left=n6
 n3.right=n7
+def preorderTraversal( root) :
+        ans=[]
+        stk=[]
+        while root or stk:
+            if not root:
+                root=stk.pop()
+            ans.append(root.val)
+            if root.right:
+                stk.append(root.right)
+            root=root.left
+        return ans
+
 
 def preOrder(root):
     stk=[root]

@@ -32,3 +32,6 @@ def Inorder(root):
         root=x.right    
     return ans
 print(Inorder(root))
+
+
+
