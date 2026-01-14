@@ -26,6 +26,7 @@ class Solution:
 
 # optimal
 # dfs
+# rev of preorder (root right left)
 def rightSideView(root):
         ans=[]
         def dfs(r,l=0):
