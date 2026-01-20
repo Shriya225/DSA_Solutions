@@ -1,67 +1,67 @@
-# Linked list..
 class Node:
-    def __init__(self,data):
-        self.data=data
+    def __init__(self,v):
+        self.data=v
         self.next=None
-class LinkedList:
+
+class LL:
     def __init__(self):
-        self.head=None
-    def insertBeginning(self,data):
-        if self.head==None:
-            self.head=Node(data)
+        self.h=None
+    def insert_beg(self,d):
+        if not self.h:
+            self.h=Node(d)
         else:
-            n=Node(data)
-            n.next=self.head
-            self.head=n
-    def insertAfter(self,data,ele):
-        h=self.head
-        while h!=None:
-            if h.data==ele:
-                n=Node(data)
-                n.next=h.next
-                h.next=n
-                return
-            h=h.next
-        print("Sorry there is no such data")
-    def deleteNode(self,data):
+            n=Node(d)
+            n.next=self.h
+            self.h=n
+    def insert_end(self,d):
+        if not self.h:
+            self.h=Node(d)
+        else:
+            x=self.h
+            while x.next:
+                x=x.next
+            x.next=Node(d)
+    def insert_after(self,ele,d):
+        n=Node(d)
+        x=self.h
+        while x:
+            if x.data==ele:
+                y=x.next
+                x.next=n
+                n.next=y
+                break
+            x=x.next
+    def insert_before(self,ele,d):
+        n=Node(d)
+        x=self.h
         prev=None
-        if self.head==None:
-            print("LL is empty...")
-        else:
-            h=self.head
-            while h!=None:
-                if h.data==data:
-                    if prev!=None:
-                        prev.next=h.next
-                    else:
-                        self.head=self.head.next
-                prev=h
-                h=h.next
-            print()
-    def display(self):
-        if self.head==None:
-            print("LL is empty...")
-        else:
-            h=self.head
-            while h!=None:
-                print(h.data,"-->  ",end=" ")
-                h=h.next
-            print()
-
-
-ll=LinkedList()
-ll.display()
-ll.insertBeginning(1)
-ll.display()
-ll.insertBeginning(2)
-ll.display()
-ll.insertBeginning(3)
-ll.display()
-ll.insertAfter(22,22)
-ll.display()
-ll.insertAfter(16,2)
-ll.display()
-ll.deleteNode(3)
-ll.display()
-ll.deleteNode(16)
-ll.display()
+        while x:
+            if x.data==ele:
+                if prev:
+                    prev.next=n
+                    n.next=x
+                else:
+                    n.next=x
+                    self.h=n
+                break
+            prev=x
+            x=x.next
+    def delNode(self,ele):
+        x=self.h
+        prev=None
+        while x:
+            if x.data==ele:
+                if prev:
+                    prev.next=x.next
+                else:
+                    self.h=self.h.next
+                break
+            prev=x
+            x=x.next
+    def length(self):
+        x=self.h
+        ans=0
+        while x:
+            ans+=1
+            x=x.next
+        return ans
