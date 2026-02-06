@@ -1,4 +1,5 @@
 # BFS
+# try to color graph using 2 colors
 class Solution:
     def isBipartite(self, g):
         v=[-1]*len(g)
