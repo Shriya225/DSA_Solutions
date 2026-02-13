@@ -1,5 +1,5 @@
 # do topo sort
-# findshortedt path to each noe intopo osrt before reaching it.
+# findshortedt path to each noe in topo osrt before reaching it.
 from typing import List
 
 
