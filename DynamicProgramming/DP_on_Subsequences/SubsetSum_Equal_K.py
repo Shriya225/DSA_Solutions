@@ -1,3 +1,4 @@
+# GFG
 # subset sum eual k(only +ve integrges)
 # any subseq in arr sums to taget k
 
