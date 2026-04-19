@@ -43,7 +43,7 @@ print(subseq_k_memo(a,len(a)-1,k,dp))
 
 
 # tabualtion..
-def subseq_tab(a):
+def subseq_tab(a,k):
     dp=[[-1]*(k+1) for _ in range(len(a))]
     # base case
     for i in range(k+1):
@@ -68,7 +68,7 @@ def subseq_tab(a):
 
 # space optimization..
 # 2D ---> 1D
-def subseq_tab(a):
+def subseq_tab(a,k):
     dp=[-1]*(k+1)
     # base case
     for i in range(k+1):
