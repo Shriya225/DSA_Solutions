@@ -1,5 +1,7 @@
 # 1463. Cherry Pickup II
 
+# 3D DP
+
 # reccurence rel'n
 def nfriends(a,i,j1,j2):
     if j1<0 or j1>=len(a[0]) or j2<0 or j2>=len(a[0]):
