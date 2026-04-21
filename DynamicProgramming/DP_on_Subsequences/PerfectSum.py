@@ -29,6 +29,26 @@ def psum(a,i,t,dp):
     dp[i][t]=l+r
     return dp[i][t]
 
+
+class Solution:
+    def perfectSum(self, a, t):
+        def psum(a,i,t,dp):
+            if t==0:
+                return 1 if a[i]!=0 else 2
+            if i==0:
+                return 1 if a[i]==t else 0
+            if dp[i][t]!=-1:return dp[i][t]
+            l=0
+            if t-a[i]>=0:
+                l=psum(a,i-1,t-a[i],dp)
+            r=psum(a,i-1,t,dp)
+            dp[i][t]=l+r
+            return dp[i][t]
+        dp=[[-1]*(t+1) for i in range(len(a))]
+        return psum(a,len(a)-1,t,dp)
+        # code here
+
+
 # tabualtion..
 
 # tabualtion..

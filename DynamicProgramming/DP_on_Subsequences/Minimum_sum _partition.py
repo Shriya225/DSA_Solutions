@@ -30,6 +30,7 @@ def subseq_tab(a):
                 x[j]=l or r
         dp=x
     ans=float("inf")
+    # last row in tbale giving answer.
     for i in range(k+1):
         if dp[i]:
             ans=min(ans,abs(i-(k-i)))
@@ -46,6 +47,7 @@ class Solution:
         dp[0] = True
         
         for num in a:
+            # this loop is super smart...that backward one & ony looping till num too...
             for j in range(k, num - 1, -1):
                 dp[j] = dp[j] or dp[j - num]
         
