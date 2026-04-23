@@ -1,5 +1,8 @@
 # Perfect Sum Problem (GFG)
 
+# Given an array arr of non-negative integers and an integer target, 
+# the task is to count all subsets of the array whose sum is equal to the given target.
+
 # reccurenec rel'n
 def psum(a,i,t):
     if t==0:
