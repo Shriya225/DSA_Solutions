@@ -29,3 +29,60 @@ class Solution:
         dp = [[-1]*m for _ in range(n)]
         return lcs(a,b,len(a)-1,len(b)-1,dp)
     
+
+# tabulation...
+# from length of longest LCS ..we r trying to find out LCS.
+class Solution:
+    def longestCommonSubsequence(self,a,b) -> int:
+        n, m = len(a), len(b)
+        dp = [[0]*(m+1) for _ in range(n+1)]
+        # fill dp
+        for i in range(1,n+1):
+            for j in range(1,m+1):
+                l=r=0
+                if a[i-1] == b[j-1]:
+                    dp[i][j] = 1 + dp[i-1][j-1]
+                else:
+                        l=dp[i-1][j]
+                        r=dp[i][j-1]  
+                        dp[i][j]=max(l,r)
+        
+        # backtrack to find LCS
+        # iterative version...
+        x,y=n,m
+        ans=""
+        while x>0 and y>0:
+            if a[x-1]==b[y-1]:
+                ans=a[x-1]+ans
+                x-=1
+                y-=1
+                continue
+            l=dp[x-1][y]
+            r=dp[x][y-1]
+            if l>r:
+                x-=1
+            else:
+                y-=1
+        # return ans
+    
+        # backtrackign...recursion version....
+        def bt(x,y):
+            if x<=0 or y<=0:
+                return ""
+            if a[x-1]==b[y-1]:
+                ans=a[x-1]+bt(x-1,y-1)
+            else:
+                l=dp[x-1][y]
+                r=dp[x][y-1]
+                if l>r:
+                    ans=bt(x-1,y)
+                    ans=bt(x-1,y)
+                elif l<r:
+                    ans=bt(x,y-1)
+                else:
+                    ans=bt(x,y-1)
+                    ans=bt(x-1,y)
+
+            return ans
+
+
