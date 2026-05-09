@@ -34,8 +34,6 @@ class Solution:
 
 
 # Tabulation..
-
-# tabualtion
 def lis_tab(a):
     dp=[[0]*(len(a)+1) for i in range(len(a)+1)]
     for i in range(len(a)-1,-1,-1):
