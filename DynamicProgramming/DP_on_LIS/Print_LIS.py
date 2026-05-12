@@ -2,7 +2,7 @@
 
 # Ending at inedx i approach...
 
-# recursive oeln
+# recursive sol'n
 class Solution:
     def lengthOfLIS(self, a):
         def h(a,i):
