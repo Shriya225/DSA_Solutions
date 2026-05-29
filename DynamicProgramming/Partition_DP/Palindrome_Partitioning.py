@@ -1,5 +1,5 @@
 # 132. Palindrome Partitioning II
-
+# MCM style thinking
 def pp2(a,i,j):
     if i>=j:return 0
     if a[i:j+1]==a[i:j+1][::-1]:return 0
