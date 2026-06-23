@@ -1,4 +1,4 @@
-# COunt numbers in range N
+# Count numbers in range N
 
 # memoized sol'n
 # only for tight=False we need to memoize 
